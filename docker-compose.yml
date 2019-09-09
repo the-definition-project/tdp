@@ -1,0 +1,15 @@
+version: "3"
+services:
+  tdp-db:
+    image: postgres:11.5
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: 'postgres'
+      PGUSER: 'postgres'
+    volumes:
+      - tdp_db_data:/var/lib/postgresql/data
+volumes:
+  tdp_db_data:
+    driver: local
